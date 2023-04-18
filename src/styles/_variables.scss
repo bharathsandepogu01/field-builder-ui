@@ -1,0 +1,40 @@
+// declare variables for common css properties
+
+// typography
+
+$global-font-size: 62.5%;
+/* makes 1rem 10px */
+$font-size: 1.6rem;
+$line-height: 1.25;
+
+// spacing 
+$margin-4: 0.4rem;
+$margin-8: 0.8rem;
+$margin-12: 1.2rem;
+$margin-16: 1.6rem;
+$margin-20: 2rem;
+$margin-24: 2.4rem;
+$margin-28: 2.8rem;
+$margin-32: 3.2rem;
+
+$padding-4: 0.4rem;
+$padding-8: 0.8rem;
+$padding-12: 1.2rem;
+$padding-16: 1.6rem;
+$padding-20: 2rem;
+$padding-24: 2.4rem;
+$padding-28: 2.8rem;
+$padding-32: 3.2rem;
+
+// colors
+$primary-color: #2f58cd;
+$primary-hover-color: #4e31aa;
+$background-color: #ffffff;
+$background-color-dark: #f7f7f7;
+$border-color: #0b0b134d;
+$text-primary-color: #0b0b13;
+$text-secondary-color: #555555;
+
+// responsiveness
+$tab-screen-max-width: 1024px;
+$mobile-screen-max-width: 550px;

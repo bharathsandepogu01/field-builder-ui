@@ -1,0 +1,31 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $global-font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: $font-size;
+  line-height: $line-height;
+  background-color: $background-color;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+    height: auto;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color-dark;
+  }
+}

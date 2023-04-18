@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "rules": {
+    // Configure rules to avoid conflicts with Prettier
+    "prettier/prettier": "error"
+  }
 }

@@ -1,0 +1,12 @@
+@mixin circle($size) {
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+}
+
+@mixin icon($color) {
+    height: 100%;
+    width: 100%;
+    fill: $color;
+    stroke: $color;
+}
