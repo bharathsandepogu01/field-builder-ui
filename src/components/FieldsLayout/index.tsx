@@ -40,19 +40,14 @@ function FieldsLayout() {
     for (let i = 0; i < fieldsWithParentId.length; i++) {
       const field = fieldsWithParentId[i];
 
-      if (!field.hasChildren) {
-        finalObj[field.id] = {
-          children: null,
-          fieldName: field.name,
-          type: field.type,
-        };
-      } else {
-        finalObj[field.id] = {
-          children: getFinalObject(fields, {}, field.id),
-          fieldName: field.name,
-          type: field.type,
-        };
-      }
+      finalObj[field.id] = {
+        children: field.hasChildren
+          ? getFinalObject(fields, {}, field.id)
+          : null,
+        fieldName: field.name,
+        type: field.type,
+        required: field.required,
+      };
     }
     return finalObj;
   };
@@ -69,19 +64,14 @@ function FieldsLayout() {
     for (let i = 0; i < fieldsWithParentId.length; i++) {
       const field = fieldsWithParentId[i];
 
-      if (!field.hasChildren) {
-        finalArr.push({
-          children: [],
-          fieldName: field.name,
-          type: field.type,
-        });
-      } else {
-        finalArr.push({
-          children: getFinalFieldArr(fields, [], field.id),
-          fieldName: field.name,
-          type: field.type,
-        });
-      }
+      finalArr.push({
+        children: field.hasChildren
+          ? getFinalFieldArr(fields, [], field.id)
+          : [],
+        fieldName: field.name,
+        type: field.type,
+        required: field.required,
+      });
     }
     return finalArr;
   };
@@ -122,7 +112,9 @@ function FieldsLayout() {
         </div>
       )}
       {!isFieldsDataEmpty && (
-        <FieldList fieldsData={fieldsData} setFieldsData={setFieldsData} />
+        <div className={classes.fieldsListWrapper}>
+          <FieldList fieldsData={fieldsData} setFieldsData={setFieldsData} />
+        </div>
       )}
     </div>
   );

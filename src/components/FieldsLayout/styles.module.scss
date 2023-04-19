@@ -2,9 +2,7 @@
 @import 'mixins';
 
 .fieldsLayoutContainer {
-    min-height: 400px;
     min-width: 600px;
-    max-height: 600px;
     max-width: 100%;
     overflow: auto;
     padding: $padding-8;
@@ -12,6 +10,12 @@
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+}
+
+.fieldsListWrapper {
+    min-height: 400px;
+    max-height: 600px;
+    overflow: auto;
 }
 
 .headerContainer {
@@ -71,4 +75,5 @@
     position: relative;
     flex: 1;
     background-color: $background-color-dark;
+    min-height: 400px;
 }
