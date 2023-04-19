@@ -22,8 +22,15 @@
     margin-bottom: 0.8rem;
 }
 
+.actionBtnsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.8rem;
+}
+
 .createFieldBtn {
-    background-color: $background-color;
+    background-color: $primary-color;
     border: 1px solid $border-color;
     height: 3.2rem;
     display: flex;
@@ -33,9 +40,25 @@
     padding: $padding-12;
     border-radius: 4px;
     cursor: pointer;
+    color: white;
 
     &>svg {
-        @include icon($primary-color, 1.4rem, 1.4rem)
+        @include icon($background-color, 1.4rem, 1.4rem)
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+.saveBtn {
+    @extend .createFieldBtn;
+    background-color: $background-color;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover {
+        opacity: 0.9;
     }
 }
 
