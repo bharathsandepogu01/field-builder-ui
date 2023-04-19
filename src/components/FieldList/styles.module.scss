@@ -1,0 +1,82 @@
+@import 'variables';
+@import 'mixins';
+
+.fieldsContainer {
+    background-color: $background-color-dark;
+
+    .children {
+        height: auto;
+    }
+}
+
+.fieldsContainerBorder {
+    // border-left: 1px solid $border-color;
+    padding-left: 1.6rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 1.4rem;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: $border-color;
+    }
+}
+
+.fieldsContainerClose {
+    .children {
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+.fieldWithArrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: $padding-12;
+    padding-right: $padding-12;
+    padding: $padding-12 $padding-8;
+}
+
+.downArrowIcon {
+    @include circle(2rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+
+    &>svg {
+        @include icon($text-primary-color, 70%, 70%);
+        fill: $text-primary-color
+    }
+
+    &:hover {
+        background-color: unset;
+    }
+}
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+.downArrowRotate {
+    transform: rotate(0deg);
+}
+
+.field {
+    flex: 1;
+}
+
+.fieldWithChildren {
+    width: 100%
+}
+
+.children {
+    width: 100%;
+}
