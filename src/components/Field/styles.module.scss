@@ -1,0 +1,83 @@
+@import 'variables';
+@import 'mixins';
+
+.fieldContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.inputsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.2rem;
+}
+
+.actionsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1.6rem;
+}
+
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.4rem;
+
+    &>span {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+}
+
+.plusIcon {
+    @include circle(2rem);
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &>svg {
+        @include icon($primary-color, 60%, 60%);
+        transition: background-color 0.3s ease;
+    }
+
+    &:hover {
+        background-color: $primary-color;
+
+        &>svg {
+            fill: $background-color
+        }
+    }
+}
+
+.deleteIcon {
+    @extend .plusIcon;
+    background-color: unset;
+
+    &>svg {
+        @include icon($error-color, 60%, 60%);
+    }
+
+    &:hover {
+        background-color: unset;
+
+        &>svg {
+            fill: $error-color
+        }
+    }
+}
+
+.textInputContainer {
+    &>p {
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+}

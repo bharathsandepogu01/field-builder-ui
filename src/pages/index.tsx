@@ -2,6 +2,7 @@ import Head from 'next/head';
 import clsx from 'clsx';
 import {Inter} from 'next/font/google';
 import classes from '@styles/Home.module.scss';
+import FieldsLayoutContainer from '@components/FieldsLayout';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -18,6 +19,7 @@ export default function Home() {
       </Head>
       <main className={clsx(inter.className, classes.main)}>
         <h1>Field Builder UI</h1>
+        <FieldsLayoutContainer />
       </main>
     </>
   );
