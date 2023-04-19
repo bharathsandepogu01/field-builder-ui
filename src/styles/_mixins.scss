@@ -4,9 +4,23 @@
     border-radius: 50%;
 }
 
-@mixin icon($color) {
-    height: 100%;
-    width: 100%;
+@mixin icon($color, $height: 100%, $width: 100%) {
+    height: $height;
+    width: $width;
     fill: $color;
     stroke: $color;
+}
+
+@mixin nestedList($list, $indent: 0) {
+    @each $item in $list {
+        li {
+            margin-left: $indent * 10px; // Adjust the margin increment as needed
+            // Add other styles for list items
+
+            // Recursively apply the mixin for nested lists
+            @if type-of($item)==list {
+                @include nestedList($item, $indent + 1);
+            }
+        }
+    }
 }
