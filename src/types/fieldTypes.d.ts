@@ -16,12 +16,14 @@ export interface IFieldsObject {
 export interface IFinalObjectField {
   fieldName: string;
   type: FieldType;
+  required: boolean;
   children: IFinalObject | null;
 }
 
 export interface IFinalArrObject {
   fieldName: string;
   type: FieldType;
+  required: boolean;
   children: IFinalArrObject[];
 }
 
